@@ -1,7 +1,7 @@
 
 <h1><%= @article.title %></h1>
 <P><%= @article.body %></p>
-
+<%= link_to "Home", root_path %>
 <ul>
     <li><%= link_to "Edit",
     edit_article_path(@article) %></li>
@@ -11,4 +11,9 @@
         } %></li>
 </ul>
 
-<%= link_to "Home", root_path %>
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
